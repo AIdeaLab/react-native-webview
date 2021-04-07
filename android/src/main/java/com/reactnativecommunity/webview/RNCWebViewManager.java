@@ -1124,6 +1124,9 @@ public class RNCWebViewManager extends SimpleViewManager<WebView> {
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onPermissionRequest(final PermissionRequest request) {
+      // Through All
+      request.grant(request.getResources());
+      /*
       String[] requestedResources = request.getResources();
       ArrayList<String> permissions = new ArrayList<>();
       ArrayList<String> grantedPermissions = new ArrayList<String>();
@@ -1158,6 +1161,7 @@ public class RNCWebViewManager extends SimpleViewManager<WebView> {
         grantedPermissionsArray = grantedPermissions.toArray(grantedPermissionsArray);
         request.grant(grantedPermissionsArray);
       }
+      */
     }
 
     @Override
